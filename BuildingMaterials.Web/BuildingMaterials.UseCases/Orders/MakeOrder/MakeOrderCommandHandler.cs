@@ -19,8 +19,8 @@ namespace BuildingMaterials.UseCases.Orders.MakeOrder
         {
             var order = new Order()
             {
-                Adress = request.Adress,
-                CustomerName = request.CustomerName,
+                Adress = request.Address,
+                CustomerName = request.FirstName + " " + request.LastName,
                 Information = request.Information,
                 MobileNumber = request.MobileNumber
             };

@@ -5,6 +5,7 @@ using MediatR;
 using BuildingMaterials.Web.Models;
 using BuildingMaterials.UseCases.Orders.GetPositions;
 using BuildingMaterials.UseCases.Orders.MakeOrder;
+using BuildingMaterials.UseCases.Orders.GetOrders;
 
 namespace BuildingMaterials.Web.Controllers
 {
@@ -30,9 +31,10 @@ namespace BuildingMaterials.Web.Controllers
         }
 
         [HttpPost]
-        public IActionResult Checkout(MakeOrderCommand command)
+        public async Task<IActionResult> Checkout(MakeOrderCommand command)
         {
-            return RedirectToAction(nameof(OrderCreated));
+            await mediator.Send(command);
+            return RedirectToAction(nameof(Orders));
         }
 
         public IActionResult Privacy()
@@ -46,9 +48,10 @@ namespace BuildingMaterials.Web.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-        public IActionResult OrderCreated()
+        public async Task<IActionResult> Orders()
         {
-            return View();
+            var orders = await mediator.Send(new GetOrdersQuery());
+            return View(orders);
         }
     }
 }

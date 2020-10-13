@@ -42,16 +42,19 @@
                             <h4 class="card-title">
                                 @position.Name
                             </h4>
-                            <h5>@position.Price.₽ Шт</h5>
+                            <h5>@position.Price₽ Шт</h5>
                             <p class="card-text">@position.Description</p>
                         </div>
                         <div class="card-footer">
-                            <div class="input-group">
-                                <input type="text" class="form-control">
-                                <div class="input-group-append" id="button-addon4">
-                                    <button class="btn btn-outline-secondary" type="button">В корзину</button>
+                            <form method="get" asp-controller="Home" asp-action="Checkout">
+                                <div class="input-group">
+                                    <input type="text" name="Id" class="form-control" hidden value="@position.Id">
+                                    <input type="text" name="Count" class="form-control">
+                                    <div class="input-group-append" id="button-addon4">
+                                        <button class="btn btn-outline-secondary" type="submit">В корзину</button>
+                                    </div>
                                 </div>
-                            </div>
+                            </form>
                         </div>
                     </div>
                 </div>

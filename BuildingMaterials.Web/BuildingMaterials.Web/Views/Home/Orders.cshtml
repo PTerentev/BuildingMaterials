@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Заказы";
+}
+@model IEnumerable<BuildingMaterials.Infrastructure.Domain.Orders.Entities.Order>
+
+<br />
+<h3>Лист заказов</h3>
+<br />
+<table id="usersTable" class="table table-hover" cellspacing="0">
+    <thead>
+        <tr>
+            <th>Имя</th>
+            <th>Адрес</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var order in Model)
+        {
+<tr>
+    <td class="align-middle">@order.CustomerName</td>
+    <td class="align-middle">@order.Adress</td>
+</tr>}
+    </tbody>
+</table>
+
+

@@ -7,12 +7,14 @@ namespace BuildingMaterials.UseCases.Orders.MakeOrder
     {
         public string MobileNumber { get; set; }
 
-        public string Adress { get; set; }
+        public string Address { get; set; }
 
-        public IDictionary<int, int> Carts { get; set; }
+        public IDictionary<int, int> Carts { get; set; } = new Dictionary<int, int>();
 
         public string Information { get; set; }
 
-        public string CustomerName { get; set; }
+        public string FirstName { get; set; }
+
+        public string LastName { get; set; }
     }
 }
