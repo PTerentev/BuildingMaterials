@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	  <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="8.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BuildingMaterials.Infrastructure.Common\BuildingMaterials.Infrastructure.Common.csproj" />
+    <ProjectReference Include="..\BuildingMaterials.Infrastructure.DataAccess\BuildingMaterials.Infrastructure.DataAccess.csproj" />
+    <ProjectReference Include="..\BuildingMaterials.Infrastructure.Domain\BuildingMaterials.Infrastructure.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

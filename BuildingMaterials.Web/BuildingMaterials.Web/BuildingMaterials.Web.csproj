@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AspNetCore.AsyncInitialization" Version="1.1.2" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="3.1.8" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BuildingMaterials.Infrastructure.Domain\BuildingMaterials.Infrastructure.Domain.csproj" />
+    <ProjectReference Include="..\BuildingMaterials.Infrastructure\BuildingMaterials.Infrastructure.csproj" />
+    <ProjectReference Include="..\BuildingMaterials.UseCases\BuildingMaterials.UseCases.csproj" />
+  </ItemGroup>
+
+</Project>
